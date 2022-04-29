@@ -335,8 +335,6 @@ func (parser *AnyParser) Parse(resp_ *[]byte) (*SolrAnyResult, error) {
 			if resp, ok := r.(map[string]interface{}); ok {
 				ParseDocResponse(resp, sr.Results)
 			}
-		case "responseHeader":
-			continue
 		default:
 			sr.Payload[k] = r
 		}
