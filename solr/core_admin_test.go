@@ -27,7 +27,7 @@ func TestCoreAdminInvalidUrl(t *testing.T) {
 		t.Errorf("Expected an error")
 		return
 	}
-	expected := "parse sdff: invalid URI for request"
+	expected := "parse \"sdff\": invalid URI for request"
 	if err.Error() != expected {
 		t.Errorf("expected '%s' but got '%s'", expected, err.Error())
 	}

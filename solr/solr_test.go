@@ -45,7 +45,7 @@ func TestSolrInvalidUrl(t *testing.T) {
 		t.Errorf("Expected an error")
 		return
 	}
-	expected := "parse sdff: invalid URI for request"
+	expected := "parse \"sdff\": invalid URI for request"
 	if err.Error() != expected {
 		t.Errorf("expected '%s' but got '%s'", expected, err.Error())
 	}
@@ -158,7 +158,7 @@ func TestSolrConnectionPostWithoutDataError(t *testing.T) {
 		t.Errorf("Expected an error")
 		return
 	}
-	expected := "Post http://www.fakedomain.tld/collection1/schema: dial tcp"
+	expected := "Post \"http://www.fakedomain.tld/collection1/schema\": dial tcp"
 	error_report := err.Error()
 
 	if strings.HasPrefix(error_report, expected) == false {
@@ -172,7 +172,7 @@ func TestSolrConnectionGetWithHeadersError(t *testing.T) {
 		t.Errorf("Expected an error")
 		return
 	}
-	expected := "Get http://www.fakedomain.tld/collection1/schema: dial tcp"
+	expected := "Get \"http://www.fakedomain.tld/collection1/schema\": dial tcp"
 	error_report := err.Error()
 	if strings.HasPrefix(error_report, expected) == false {
 		t.Errorf("expected '%s' but got '%s'", expected, err.Error())
