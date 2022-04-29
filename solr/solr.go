@@ -105,6 +105,15 @@ type SolrRealtimeGetResult struct {
 	Results *Collection
 }
 
+// Parsed result for any response that is not already handled
+type SolrAnyResult struct {
+	Status         int         // status quick access to status
+	Results        *Collection // results parsed documents, basically response object
+	ResponseHeader map[string]interface{}
+	Error          map[string]interface{}
+	Payload        map[string]interface{}
+}
+
 type SolrInterface struct {
 	conn *Connection
 }
